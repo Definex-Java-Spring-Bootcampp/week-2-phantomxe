@@ -1,5 +1,6 @@
 package com.patika.kredinbizdeservice.controller;
 
+import com.patika.kredinbizdeservice.model.Application;
 import com.patika.kredinbizdeservice.model.User;
 import com.patika.kredinbizdeservice.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,11 @@ public class UserController {
     @GetMapping("/{email}")
     public User getByEmail(@PathVariable String email) {
         return userService.getByEmail(email);
+    }
+
+    @GetMapping("/{email}/applications")
+    public List<Application> getApplications(@PathVariable String email) {
+        return userService.getApplications(email);
     }
 
     @PutMapping("/{email}")
