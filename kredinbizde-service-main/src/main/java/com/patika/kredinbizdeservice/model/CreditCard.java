@@ -7,11 +7,12 @@ public class CreditCard implements Product{
 
     private BigDecimal fee;
     private List<Campaign> campaignList;
-    private Bank bank;
+    private String bank;
 
-    public CreditCard(BigDecimal fee, List<Campaign> campaignList) {
+    public CreditCard(BigDecimal fee, List<Campaign> campaignList, String bank) {
         this.fee = fee;
         this.campaignList = campaignList;
+        this.bank = bank;
     }
 
     public BigDecimal getFee() {
@@ -30,11 +31,11 @@ public class CreditCard implements Product{
         this.campaignList = campaignList;
     }
 
-    public Bank getBank() {
+    public String getBank() {
         return bank;
     }
 
-    public void setBank(Bank bank) {
+    public void setBank(String bank) {
         this.bank = bank;
     }
 

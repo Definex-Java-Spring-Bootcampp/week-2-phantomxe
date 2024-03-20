@@ -28,7 +28,16 @@ public class Bank {
     public String toString() {
         return "Bank{" +
                 "name='" + name + '\'' +
-                ", loanList=" + loanList +
+                ", loanList=" + loanList + '\'' +
+                ", creditCards=" + creditCards +
                 '}';
+    }
+
+    public List<CreditCard> getCreditCards() {
+        return creditCards;
+    }
+
+    public void setCreditCards(List<CreditCard> creditCards) {
+        this.creditCards = creditCards;
     }
 }
