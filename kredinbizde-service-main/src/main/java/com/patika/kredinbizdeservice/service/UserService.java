@@ -11,7 +11,6 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-@Scope(value = ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class UserService implements IUserService {
 
     private UserRepository userRepository = new UserRepository();
