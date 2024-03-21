@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.patika.kredinbizdeservice.factory.LoanFactory;
 import com.patika.kredinbizdeservice.model.Application;
 import com.patika.kredinbizdeservice.model.Loan;
 import com.patika.kredinbizdeservice.model.User;
