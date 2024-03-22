@@ -51,11 +51,11 @@ public class LoanFactory {
         for(LoanLimit limit : mylimits) {
             if(limit.getMinAmount().compareTo(amount) >= 0 && limit.getMaxAmount().compareTo(amount) <= 0){
                 if(loanType == LoanType.ARAC_KREDISI) {
-                    return new VechileLoan(amount, installment, limit.getInterestRate());
+                    return new VechileLoan(amount, installment, limit.getInterestRate(), limit.getBank());
                 } else if(loanType == LoanType.IHTIYAC_KREDISI) {
-                    return new ConsumerLoan(amount, installment, limit.getInterestRate());
+                    return new ConsumerLoan(amount, installment, limit.getInterestRate(), limit.getBank());
                 } else if(loanType == LoanType.KONUT_KREDISI) {
-                    return new HouseLoan(amount, installment, limit.getInterestRate());
+                    return new HouseLoan(amount, installment, limit.getInterestRate(), limit.getBank());
                 }
             }
         }

@@ -14,8 +14,8 @@ public class VechileLoan extends Loan {
 
     }
 
-    public VechileLoan(BigDecimal amount, Integer installment, Double interestRate) {
-        super(amount, installment, interestRate);
+    public VechileLoan(BigDecimal amount, Integer installment, Double interestRate, String bank) {
+        super(amount, installment, interestRate, bank);
     }
 
     public LoanType getLoanType() {

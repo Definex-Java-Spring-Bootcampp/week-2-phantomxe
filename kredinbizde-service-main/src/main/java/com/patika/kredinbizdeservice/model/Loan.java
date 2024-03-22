@@ -15,10 +15,11 @@ public abstract class Loan implements Product {
     public Loan() {
     }
 
-    public Loan(BigDecimal amount, Integer installment, Double interestRate) {
+    public Loan(BigDecimal amount, Integer installment, Double interestRate, String bank) {
         this.amount = amount;
         this.installment = installment;
         this.interestRate = interestRate;
+        this.bank = bank;
     }
 
     abstract void calculate(BigDecimal amount, int installment);

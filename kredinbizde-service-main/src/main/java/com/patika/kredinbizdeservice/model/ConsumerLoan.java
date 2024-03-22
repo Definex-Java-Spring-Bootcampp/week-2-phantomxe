@@ -15,8 +15,8 @@ public class ConsumerLoan extends Loan {
 
     }
 
-    public ConsumerLoan(BigDecimal amount, Integer installment, Double interestRate) {
-        super(amount, installment, interestRate);
+    public ConsumerLoan(BigDecimal amount, Integer installment, Double interestRate, String bank) {
+        super(amount, installment, interestRate, bank);
     }
 
     public LoanType getLoanType() {

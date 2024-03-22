@@ -12,8 +12,8 @@ public class HouseLoan extends Loan {
 
     }
 
-    public HouseLoan(BigDecimal amount, Integer installment, Double interestRate) {
-        super(amount, installment, interestRate);
+    public HouseLoan(BigDecimal amount, Integer installment, Double interestRate, String bank) {
+        super(amount, installment, interestRate, bank);
     }
 
     public LoanType getLoanType() {
