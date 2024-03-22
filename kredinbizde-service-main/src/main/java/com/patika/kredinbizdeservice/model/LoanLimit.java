@@ -7,12 +7,14 @@ public class LoanLimit {
     private BigDecimal minAmount;
     private Double interestRate;
     private Integer installment;
+    private String bank;
  
-    public LoanLimit(BigDecimal maxAmount, BigDecimal minAmount, Double interestRate, Integer installment) {
+    public LoanLimit(BigDecimal maxAmount, BigDecimal minAmount, Double interestRate, Integer installment, String bank) {
         this.maxAmount = maxAmount;
         this.minAmount = minAmount;
         this.interestRate = interestRate;
         this.installment = installment;
+        this.bank = bank;
     }
     public BigDecimal getMaxAmount() {
         return maxAmount;
@@ -38,6 +40,11 @@ public class LoanLimit {
     public void setInstallment(Integer installment) {
         this.installment = installment;
     }
-
     
+    public String getBank() {
+        return bank;
+    }
+    public void setBank(String bank) {
+        this.bank = bank;
+    }
 }

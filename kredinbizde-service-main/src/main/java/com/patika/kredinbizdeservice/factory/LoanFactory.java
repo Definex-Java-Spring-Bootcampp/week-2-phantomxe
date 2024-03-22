@@ -1,6 +1,7 @@
 package com.patika.kredinbizdeservice.factory;
 
 import com.patika.kredinbizdeservice.enums.LoanType;
+import com.patika.kredinbizdeservice.model.Bank;
 import com.patika.kredinbizdeservice.model.ConsumerLoan;
 import com.patika.kredinbizdeservice.model.HouseLoan;
 import com.patika.kredinbizdeservice.model.Loan;
@@ -18,18 +19,18 @@ public class LoanFactory {
 
     public LoanFactory() {
         interestRates.put(LoanType.ARAC_KREDISI, List.of(
-            new LoanLimit(BigDecimal.valueOf(150000), BigDecimal.valueOf(200000), 1.99, 12),
-            new LoanLimit(BigDecimal.valueOf(200000), BigDecimal.valueOf(400000), 2.49, 24),
-            new LoanLimit(BigDecimal.valueOf(400000), BigDecimal.valueOf(690000), 3.10, 36)));
+            new LoanLimit(BigDecimal.valueOf(150000), BigDecimal.valueOf(200000), 1.99, 12, "Garanti Bankasi"),
+            new LoanLimit(BigDecimal.valueOf(200000), BigDecimal.valueOf(400000), 2.49, 24, "Garanti Bankasi"),
+            new LoanLimit(BigDecimal.valueOf(400000), BigDecimal.valueOf(690000), 3.10, 36, "IsBank")));
         
         interestRates.put(LoanType.IHTIYAC_KREDISI, List.of(
-            new LoanLimit(BigDecimal.valueOf(20000), BigDecimal.valueOf(80000), 2.99, 12)));
+            new LoanLimit(BigDecimal.valueOf(20000), BigDecimal.valueOf(80000), 2.99, 12, "IsBank")));
 
         interestRates.put(LoanType.KONUT_KREDISI, List.of(
-            new LoanLimit(BigDecimal.valueOf(300000), BigDecimal.valueOf(800000), 3.49, 12),
-            new LoanLimit(BigDecimal.valueOf(800000), BigDecimal.valueOf(2000000), 3.99, 24),
-            new LoanLimit(BigDecimal.valueOf(2000000), BigDecimal.valueOf(10000000), 5.12, 36),
-            new LoanLimit(BigDecimal.valueOf(10000000), BigDecimal.valueOf(15000000), 6.55, 48)));
+            new LoanLimit(BigDecimal.valueOf(300000), BigDecimal.valueOf(800000), 3.49, 12, "AkBank"),
+            new LoanLimit(BigDecimal.valueOf(800000), BigDecimal.valueOf(2000000), 3.99, 24, "YapiKredi Bankasi"),
+            new LoanLimit(BigDecimal.valueOf(2000000), BigDecimal.valueOf(10000000), 5.12, 36, "YapiKredi Bankasi"),
+            new LoanLimit(BigDecimal.valueOf(10000000), BigDecimal.valueOf(15000000), 6.55, 48, "YapiKredi Bankasi")));
     }
     
     public Loan generateLoan(LoanType loanType, BigDecimal amount, Integer installment) throws Exception { 
@@ -46,9 +47,9 @@ public class LoanFactory {
         if(mylimits.size() == 0) {
             throw new Exception("Loan not found!");
         }
-
+ 
         for(LoanLimit limit : mylimits) {
-            if(amount.compareTo(limit.getMinAmount()) >= 0 && amount.compareTo(limit.getMaxAmount()) <= 0) {
+            if(limit.getMinAmount().compareTo(amount) >= 0 && limit.getMaxAmount().compareTo(amount) <= 0){
                 if(loanType == LoanType.ARAC_KREDISI) {
                     return new VechileLoan(amount, installment, limit.getInterestRate());
                 } else if(loanType == LoanType.IHTIYAC_KREDISI) {

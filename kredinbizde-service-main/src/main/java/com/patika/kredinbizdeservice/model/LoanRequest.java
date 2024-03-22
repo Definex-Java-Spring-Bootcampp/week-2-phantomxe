@@ -5,12 +5,10 @@ import java.math.BigDecimal;
 
 public class LoanRequest {
     private BigDecimal amount;
-    private LoanType loanType;
     private Integer installment;
 
-    public LoanRequest(BigDecimal amount, LoanType loanType, Integer installment) {
-        this.amount = amount;
-        this.loanType = loanType;
+    public LoanRequest(BigDecimal amount, Integer installment) {
+        this.amount = amount; 
         this.installment = installment;
     }
 
@@ -22,14 +20,6 @@ public class LoanRequest {
         this.amount = amount;
     }
 
-    public LoanType getLoanType() {
-        return loanType;
-    }
-
-    public void setLoanType(LoanType loanType) {
-        this.loanType = loanType;
-    }
-
     public Integer getInstallment() {
         return installment;
     }
@@ -37,6 +27,4 @@ public class LoanRequest {
     public void setInstallment(Integer installment) {
         this.installment = installment;
     }
-
-    
 }
