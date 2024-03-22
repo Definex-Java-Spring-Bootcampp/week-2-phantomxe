@@ -46,6 +46,11 @@ public class ApplicationController {
             .collect(Collectors.toList());
     }
 
+    @GetMapping("/loans/apply")
+    public List<String> getAvailableLoanTypes() {
+        return loanTypeMap.keySet().stream().collect(Collectors.toList());
+    }
+
     @PostMapping("/loans/apply/{loanTypeName}/{email}")
     public ResponseEntity<?> createVehicleLoan(@PathVariable String email, @PathVariable String loanTypeName, @RequestBody LoanRequest loanRequestBody) {
         if(loanTypeName == null || loanTypeName.isEmpty() || loanTypeMap.get(loanTypeName) == null) {
