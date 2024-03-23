@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.patika.kredinbizdeservice.service.ApplicationService;
+import com.patika.kredinbizdeservice.dto.LoanRequest;
+import com.patika.kredinbizdeservice.dto.LoanResponse;
 import com.patika.kredinbizdeservice.enums.LoanType;
 import com.patika.kredinbizdeservice.factory.LoanFactory;
 import com.patika.kredinbizdeservice.model.Application;
 import com.patika.kredinbizdeservice.model.Loan;
-import com.patika.kredinbizdeservice.model.LoanRequest;
-import com.patika.kredinbizdeservice.model.LoanResponse;
 
 import java.util.List;
 import java.util.Map;

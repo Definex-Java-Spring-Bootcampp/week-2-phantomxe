@@ -1,4 +1,4 @@
-package com.patika.kredinbizdeservice.model;
+package com.patika.kredinbizdeservice.dto;
 
 import com.patika.kredinbizdeservice.enums.LoanType;
 import java.math.BigDecimal;

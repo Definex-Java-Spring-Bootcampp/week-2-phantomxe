@@ -1,8 +1,9 @@
-package com.patika.kredinbizdeservice.model;
+package com.patika.kredinbizdeservice.dto;
 
 import java.time.LocalDateTime;
 
 import com.patika.kredinbizdeservice.enums.ApplicationStatus;
+import com.patika.kredinbizdeservice.model.Loan;
 
 public class LoanResponse {
     private Loan loan;
